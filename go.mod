@@ -1,4 +1,4 @@
-module github.com/jkarage/joker-api
+module github.com/jkarage/jokes-api
 
 go 1.19
 
