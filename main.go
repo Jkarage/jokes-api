@@ -1,12 +1,8 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/jkarage/jokes-api/utils"
-)
+import "github.com/jkarage/jokes-api/routes"
 
 func main() {
-	rjoke := utils.RandomJoke()
-	fmt.Println(rjoke)
+	r := routes.InitRoutes()
+	r.Run()
 }

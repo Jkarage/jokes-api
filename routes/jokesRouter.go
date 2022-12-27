@@ -8,4 +8,5 @@ import (
 func SetJokesRouter(r *gin.Engine) {
 	joke := new(controllers.Joke)
 	r.GET("/", joke.Home)
+	r.GET("/joke", joke.Joke)
 }
