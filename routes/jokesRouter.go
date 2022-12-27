@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jkarage/joker-api/controllers"
+	"github.com/jkarage/jokes-api/controllers"
 )
 
 func SetJokesRouter(r *gin.Engine) {
