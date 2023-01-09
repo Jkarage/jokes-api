@@ -11,9 +11,3 @@ func InitRoutes() *gin.Engine {
 	SetJokesRouter(r)
 	return r
 }
-
-func CheckNil(err error) {
-	if err != nil {
-		panic(err.Error())
-	}
-}
