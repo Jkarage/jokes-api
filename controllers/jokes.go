@@ -14,6 +14,9 @@ func (Joke) Home(c *gin.Context) {
 }
 
 func (Joke) Joke(c *gin.Context) {
-	joke := utils.RandomJoke()
-	c.String(http.StatusOK, "%s", joke)
+	joke, author := utils.RandomJoke()
+	c.JSON(http.StatusOK, gin.H{
+		"joke":   joke,
+		"author": author,
+	})
 }
