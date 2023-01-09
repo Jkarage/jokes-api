@@ -13,10 +13,8 @@ type Jokes struct {
 }
 
 type Joke struct {
-	Text     string   `json:"text"`
-	Question string   `json:"question"`
-	Answer   string   `json:"answer"`
-	Tags     []string `json:"tags"`
+	Text   string `json:"text"`
+	Author string `json:"author"`
 }
 
 var jokes Jokes
@@ -35,12 +33,12 @@ func init() {
 	CheckNilErr(err)
 }
 
-func RandomJoke() string {
+func RandomJoke() (string, string) {
 	max := len(jokes.Jokes)
 	source := rand.NewSource(time.Now().Unix())
 	r := rand.New(source)
 	index := r.Intn(max)
-	return jokes.Jokes[index].Text
+	return jokes.Jokes[index].Text, jokes.Jokes[index].Author
 }
 
 func CheckNilErr(err error) {
